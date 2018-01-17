@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main_menu {
+  display: flex;
+  list-style-type: none;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  margin-bottom: 1em;
+  background-color: red;
+  color: white;
+}
+
+.main_menu li {
+  display: table;
+  padding: 0.5rem;
+}
+
+.main_menu li:hover {
+  background-color: white;
+  color: black;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.red-pill {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5em;
+  padding: 1em;
+  color: white;
+  background-color: red;
+  font-size: 1.2rem;
+}
