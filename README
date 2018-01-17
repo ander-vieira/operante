@@ -1,0 +1,28 @@
+Proyecto de Héctor Galindo, basado en ejercicios de matemáticas para niños, con usos educativos.
+
+Instalación rápida
+El proyecto es un servidor escrito sobre Node.JS que ofrece una API REST para la funcionalidad de una aplicación, además de una página web con información sobre Operante, enlaces de descarga, y demás.
+
+Es posible tener una copia del servidor operando en un entorno local con sólo tener Node instalado. Suponiendo que los comandos "node" y "npm" estén disponibles por esos nombres, los pasos de instalación son los siguientes:
+
+1. Descargar o clonar mediante git este repositorio en un directorio.
+
+2. Navegar a ese directorio ($cd ruta/al/directorio)
+
+3. $npm install (instalará todos los módulos de Node necesarios en el directorio del proyecto)
+
+4. $npm start (ejecuta el servidor)
+
+Estructura del proyecto
+
+- Los archivos JS que no se encuentran dentro de public/ son el código del propio servidor, que se ejecutará mediante Node.
+
+- El directorio public/ contiene los archivos CSS, JS y otros archivos estáticos para la web. Estos se sirven minificados.
+
+- El directorio views/ incluye las vistas que se muestran al usuario en la página web. Utilizan el motor de plantillas Handlebars para aumentar HTML. Específicamente, el archivo views/layouts/main.html se incluye en todas las vistas
+
+- package.json contiene la información del proyecto y sus dependencias, incluyendo el número de versión.
+
+- Otros archivos .json se utilizan para la configuración en el servidor.
+
+- log/ contiene las trazas y debugging generados por el servidor. Algunas de estas trazas también se muestran por consola.
