@@ -15,6 +15,7 @@ app.use(minify());
 app.use(express.static('./public'));
 require('./rest.js')(app);
 require('./views.js')(app);
-var server = app.listen(80, function() {
-  logger.info("Server started on port 80");
+var port = process.argv[2];
+var server = app.listen(port, function() {
+  logger.info("Server started on port "+port);
 });
