@@ -1,0 +1,10 @@
+{"level":"info","message":"Server started on port undefined","timestamp":"2018-01-18T08:19:58.955Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2018-01-18T08:20:11.766Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2018-01-18T08:32:47.108Z"}
+{"level":"error","message":"Error al conectar a MongoDB","timestamp":"2018-01-18T08:33:20.546Z"}
+{"level":"error","message":"Error al conectar a MongoDB","timestamp":"2018-01-18T08:33:22.311Z"}
+{"level":"error","message":"Error al conectar a MongoDB","timestamp":"2018-01-18T08:33:23.189Z"}
+{"level":"error","message":"Error al conectar a MongoDB","timestamp":"2018-01-18T08:35:23.205Z"}
+{"level":"error","message":"Error al conectar a MongoDB","timestamp":"2018-01-18T08:41:39.268Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2018-01-18T08:43:16.047Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2018-01-18T08:49:45.812Z"}
