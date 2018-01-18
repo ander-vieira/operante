@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 require('./logger.js');
 
 var app = express();
-app.use(favicon(path.join(__dirname, 'public/media', 'favicon.ico')));
+app.use(favicon('./public/media/favicon.ico'));
 app.engine('html', exphbs({
   defaultLayout: 'main',
   extname: '.html',
