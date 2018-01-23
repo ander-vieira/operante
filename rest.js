@@ -46,4 +46,16 @@ module.exports = function(app) {
       }
     });
   });
+
+  app.post("/rest/logout", function(req, res) {
+    var cookie = req.cookies["operanteSession"];
+
+    if(cookie) {
+      queries.clearCookie(cookie);
+
+      res.clearCookie("operanteSession");
+    }
+
+    res.send();
+  });
 };

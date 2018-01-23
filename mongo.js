@@ -87,3 +87,11 @@ module.exports.loginUsuario = function(nombre, passwd, callback) {
     }
   });
 }
+
+module.exports.clearCookie = function(cookie) {
+
+  if(isConnected) {
+    var col = connection.db('prueba').collection('logins');
+    col.deleteOne({"cookie": cookie});
+  }
+}
