@@ -11,7 +11,9 @@ Es posible tener una copia del servidor operando en un entorno local con sólo t
 
 3. $npm install (instalará todos los módulos de Node necesarios en el directorio del proyecto)
 
-4. $npm start (ejecuta el servidor)
+4. $npm run local (ejecuta el servidor)
+
+5. Para comprobar el funcionamiento del servidor, escribir localhost:3000 en un navegador debería mostrar la página Web incluida con el servidor
 
 Estructura del proyecto
 
