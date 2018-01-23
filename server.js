@@ -3,6 +3,8 @@ var minify = require("express-minify");
 var exphbs  = require('express-handlebars');
 var favicon = require('serve-favicon');
 var defaults = require('./defaults.json');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 require('./logger.js');
 
@@ -17,6 +19,8 @@ app.engine('html', exphbs({
 app.set('view engine', 'html');
 app.use(minify());
 app.use(express.static('./public'));
+app.use(cookieParser());
+app.use(bodyParser());
 require('./rest.js')(app);
 require('./views.js')(app);
 var port = process.argv[2];
