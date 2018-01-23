@@ -1,10 +1,12 @@
 {
   "name": "operante",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "operante",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "local": "node server.js 3000",
+    "web": "node server.js $PORT"
+
   },
   "author": "",
   "license": "ISC",
