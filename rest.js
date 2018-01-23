@@ -2,9 +2,18 @@ var queries = require('./mongo');
 
 module.exports = function(app) {
   app.get("/rest/datosUsuario", function(req, res) {
-    queries.cargarNombre(function(nombre) {
-      res.json({nombre: nombre});
-    });
+    var cookie = req.cookies["operanteSession"];
+    if(cookie) {
+      queries.cargarNombre(cookie, function(errcode, nombre) {
+        if(errcode) {
+          res.json({nombre: "ANÓNIMO"});
+        } else {
+          res.json({nombre: nombre});
+        }
+      });
+    } else {
+      res.json({nombre: "ANÓNIMO"});
+    }
   });
 
   app.post("/rest/registro", function(req, res) {
