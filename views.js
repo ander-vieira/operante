@@ -11,6 +11,10 @@ module.exports = function(app) {
     res.render('contacto/contacto', {title: 'Información de contacto'});
   });
 
+  app.get('/registro', function(req, res) {
+    res.render('registro/registro', {title: 'Registrarse'});
+  });
+
   app.get('*', function(req, res) {
     res.redirect("/error");
   });
