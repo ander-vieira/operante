@@ -23,4 +23,18 @@ module.exports = function(app) {
       res.send();
     });
   })
+
+  app.post("/rest/login", function(req, res) {
+    var nombre = req.body["nombre"];
+    var passwd = req.body["passwd"];
+
+    queries.loginUsuario(nombre, passwd, function(errcode, cookie) {
+      if(errcode) {
+        res.json({"error": errcode});
+      } else {
+        res.cookie('operanteSession', cookie, {maxAge: 28800000, httpOnly: true});
+        res.send();
+      }
+    });
+  });
 };

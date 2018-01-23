@@ -47,3 +47,40 @@ module.exports.registroUsuario = function(nombre, passwd, callback) {
     }
   });
 }
+
+module.exports.loginUsuario = function(nombre, passwd, callback) {
+  if(!isConnected) {
+    callback("dberr");
+  }
+
+  var col = connection.db('prueba').collection('usuarios');
+  col.findOne({"nombre": nombre}, function(err, usuario) {
+    if(err) {
+      logger.error("Error: "+err);
+      callback("dberr");
+    } else if(usuario) {
+      if(usuario.passwd === passwd) {
+        col = connection.db('prueba').collection('logins');
+        col.findOne({"nombre": nombre}, function(err, usuario) {
+          if(err) {
+            logger.error("Error: "+err);
+            callback("dberr");
+          } else {
+            var cookie;
+            if(usuario) {
+              cookie = usuario.cookie;
+            } else {
+              cookie = Math.random().toString().slice(2, 15);
+              col.insert({"nombre": nombre, "cookie": cookie});
+            }
+            callback(null, cookie);
+          }
+        });
+      } else {
+        callback("wrongpasswd");
+      }
+    } else {
+      callback("usernotexist");
+    }
+  });
+}

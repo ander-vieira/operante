@@ -15,6 +15,10 @@ module.exports = function(app) {
     res.render('registro/registro', {title: 'Registrarse'});
   });
 
+  app.get('/login', function(req, res) {
+    res.render('login/login', {title: 'Iniciar sesión'});
+  });
+
   app.get('*', function(req, res) {
     res.redirect("/error");
   });
