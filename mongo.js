@@ -31,14 +31,19 @@ module.exports.cargarNombre = function(callback) {
 
 module.exports.registroUsuario = function(nombre, passwd, callback) {
   if(!isConnected) {
-    callback();
-    return;
+    callback("dberr");
   }
 
   var col = connection.db('prueba').collection('usuarios');
-  col.find({"nombre": nombre}, function(err, usuario) {
-    if(!err && !usuario) {
+  col.findOne({"nombre": nombre}, function(err, usuario) {
+    if(err) {
+      logger.error("Error: "+err);
+      callback("dberr");
+    } else if(!usuario) {
       col.insert({"nombre": nombre, "passwd": passwd, "verified": false});
+      callback();
+    } else {
+      callback("repeateduser");
     }
   });
 }

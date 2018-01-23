@@ -15,8 +15,12 @@ module.exports = function(app) {
       return;
     }
 
-    queries.registroUsuario(nombre, passwd);
+    queries.registroUsuario(nombre, passwd, function(errcode) {
+      if(errcode) {
+        res.json({"error": errcode});
+      }
 
-    res.json();
+      res.send();
+    });
   })
 };
